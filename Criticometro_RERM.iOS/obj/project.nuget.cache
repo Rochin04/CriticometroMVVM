@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "6Mgrxch2Tg33pQkFbdqCThXjAoQpJXO7dgVr/gi0kNSk9sbvtOcL09Xp1MePO6LUa0kP2emul+s/Ys0152AMPA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\emiro\\OneDrive\\Escritorio\\Criticometro_RERM\\Criticometro_RERM.iOS\\Criticometro_RERM.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\emiro\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\emiro\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\emiro\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Criticometro_RERM"
+             x:Class="Criticometro_RERM.MainPage">
+    
+    <StackLayout>
+        <Frame BorderColor="Black">
+            <Label Text="ACTIVIDAD: 'CRITICOGRAFO'" TextColor="Black" HorizontalOptions="Center"/>
+        </Frame>
+        <!--<Line X1="-5" Y1="0" X2="0" Y2="-5" Stroke="black" HorizontalOptions="Center"/>--> 
+        <Label Text="Nombre:" Padding="15,5,0,10" TextColor="Black"/>
+        <Entry Margin="10" x:Name="Nombre" />
+        <Label Text="Genero:" Padding="15,5,0,10" TextColor="Black"/>
+        <Grid ColumnSpacing="5" Margin="10">
+            <RadioButton Content="Hombre" FontSize="15" Grid.Column="0" BorderColor="White" Background="white" Value="Hombre" x:Name="RBH" />
+            <RadioButton Content="Mujer" FontSize="15" Grid.Column="1" BorderColor="White" Background="white" Value="Mujer" x:Name="RBM"/>
+            <CheckBox Grid.Row="1" Grid.Column="0" Color="Black" x:Name="Alto" />
+            <Label Text="Alto" Grid.Row="1" Grid.Column="0" TextColor="Black" Margin="35,5,0,0"/>
+            <CheckBox Grid.Column="1" Grid.Row="1" Color="Black" x:Name="Feo" />
+            <Label Text="Feo" Grid.Row="1" Grid.Column="1" TextColor="Black" Margin="35,5,0,0"/>
+            <CheckBox Grid.Column="0" Grid.Row="2" Color="Black" x:Name="Listo" />
+            <Label Text="Listo" Grid.Row="2" Grid.Column="0" TextColor="Black" Margin="35,5,0,0"/>
+            <CheckBox Grid.Column="1" Grid.Row="2" Color="Black" x:Name="Extrabagante" />
+            <Label Text="Extrabagante" Grid.Row="2" Grid.Column="1" TextColor="Black" Margin="35,5,0,0"/>
+            <CheckBox Grid.Column="0" Grid.Row="3" Color="Black" x:Name="Raro" />
+            <Label Text="Raro" Grid.Row="3" Grid.Column="0" TextColor="Black" Margin="35,5,0,0"/>
+            <CheckBox Grid.Column="1" Grid.Row="3" Color="Black" x:Name="Grande" />
+            <Label Text="Grande" Grid.Row="3" Grid.Column="1" TextColor="Black" Margin="35,5,0,0"/>
+        </Grid>
+        <Frame>
+            <Button Text="CRITICAR" TextColor="Black" Clicked="Button_Clicked"/>
+        </Frame>
+        <!--      Text="{Binding Nombre}"  Command="{Binding CriticarCommand}"  Text="{Binding Mensaje}"-->
+        <Label x:Name="mensaje" />
+    </StackLayout>
+</ContentPage>
