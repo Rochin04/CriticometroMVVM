@@ -10,28 +10,28 @@
         </Frame>
         <!--<Line X1="-5" Y1="0" X2="0" Y2="-5" Stroke="black" HorizontalOptions="Center"/>--> 
         <Label Text="Nombre:" Padding="15,5,0,10" TextColor="Black"/>
-        <Entry Margin="10" x:Name="Nombre" />
+        <Entry Margin="10" x:Name="Nombre" Text="{Binding Nombre}"/>
         <Label Text="Genero:" Padding="15,5,0,10" TextColor="Black"/>
         <Grid ColumnSpacing="5" Margin="10">
-            <RadioButton Content="Hombre" FontSize="15" Grid.Column="0" BorderColor="White" Background="white" Value="Hombre" x:Name="RBH" />
-            <RadioButton Content="Mujer" FontSize="15" Grid.Column="1" BorderColor="White" Background="white" Value="Mujer" x:Name="RBM"/>
-            <CheckBox Grid.Row="1" Grid.Column="0" Color="Black" x:Name="Alto" />
+            <RadioButton Content="Hombre" FontSize="15" Grid.Column="0" BorderColor="White" Background="white" Value="Hombre" x:Name="RBH" IsChecked="{Binding Hombre}"/>
+            <RadioButton Content="Mujer" FontSize="15" Grid.Column="1" BorderColor="White" Background="white" Value="Mujer" x:Name="RBM" IsChecked="{Binding Mujer}"/>
+            <CheckBox Grid.Row="1" Grid.Column="0" Color="Black" x:Name="Alto" IsChecked="{Binding Caracteristica1}"/>
             <Label Text="Alto" Grid.Row="1" Grid.Column="0" TextColor="Black" Margin="35,5,0,0"/>
-            <CheckBox Grid.Column="1" Grid.Row="1" Color="Black" x:Name="Feo" />
+            <CheckBox Grid.Column="1" Grid.Row="1" Color="Black" x:Name="Feo" IsChecked="{Binding Caracteristica2}"/>
             <Label Text="Feo" Grid.Row="1" Grid.Column="1" TextColor="Black" Margin="35,5,0,0"/>
-            <CheckBox Grid.Column="0" Grid.Row="2" Color="Black" x:Name="Listo" />
+            <CheckBox Grid.Column="0" Grid.Row="2" Color="Black" x:Name="Listo" IsChecked="{Binding Caracteristica3}"/>
             <Label Text="Listo" Grid.Row="2" Grid.Column="0" TextColor="Black" Margin="35,5,0,0"/>
-            <CheckBox Grid.Column="1" Grid.Row="2" Color="Black" x:Name="Extrabagante" />
+            <CheckBox Grid.Column="1" Grid.Row="2" Color="Black" x:Name="Extrabagante" IsChecked="{Binding Caracteristica4}"/>
             <Label Text="Extrabagante" Grid.Row="2" Grid.Column="1" TextColor="Black" Margin="35,5,0,0"/>
-            <CheckBox Grid.Column="0" Grid.Row="3" Color="Black" x:Name="Raro" />
+            <CheckBox Grid.Column="0" Grid.Row="3" Color="Black" x:Name="Raro" IsChecked="{Binding Caracteristica5}"/>
             <Label Text="Raro" Grid.Row="3" Grid.Column="0" TextColor="Black" Margin="35,5,0,0"/>
-            <CheckBox Grid.Column="1" Grid.Row="3" Color="Black" x:Name="Grande" />
+            <CheckBox Grid.Column="1" Grid.Row="3" Color="Black" x:Name="Grande" IsChecked="{Binding Caracteristica6}"/>
             <Label Text="Grande" Grid.Row="3" Grid.Column="1" TextColor="Black" Margin="35,5,0,0"/>
         </Grid>
         <Frame>
-            <Button Text="CRITICAR" TextColor="Black" Clicked="Button_Clicked"/>
+            <Button Text="CRITICAR" TextColor="Black" Command="{Binding CriticarCommand}"/>
         </Frame>
-        <!--      Text="{Binding Nombre}"  Command="{Binding CriticarCommand}"  Text="{Binding Mensaje}"-->
-        <Label x:Name="mensaje" />
+        <!-- Clicked="Button_Clicked"     Text="{Binding Nombre}"  Command="{Binding CriticarCommand}"  Text="{Binding Mensaje}"-->
+        <Label x:Name="mensaje" Text="{Binding Mensaje}"/>
     </StackLayout>
 </ContentPage>

@@ -12,7 +12,7 @@ namespace Criticometro_RERM.ViewModel
     public class VMCriticografo : ViewModelBase
     {
         string _Nombre;
-        public string _Genero { get; set; }
+
         //string caracteristica1 = "";
         //string caracteristica2 = "";
         //string caracteristica3 = "";
@@ -22,13 +22,15 @@ namespace Criticometro_RERM.ViewModel
         //public string _Nombre { get; set; }
         //string _Mujer;
         //public string _Hombre { get; set; }
-        bool _Caracteristica1;
-        bool _Caracteristica2;
-        bool _Caracteristica3;
-        bool _Caracteristica4;
-        bool _Caracteristica5;
-        bool _Caracteristica6;
-        string _Mensaje;
+        private bool _Mujer;
+        private bool _Hombre;
+        private bool _Caracteristica1;
+        private bool _Caracteristica2;
+        private bool _Caracteristica3;
+        private bool _Caracteristica4;
+        private bool _Caracteristica5;
+        private bool _Caracteristica6;
+        private string _Mensaje;
         public VMCriticografo()
         {
 
@@ -52,36 +54,46 @@ namespace Criticometro_RERM.ViewModel
         //    get { return _Genero; }
         //    set { SetValue(ref _Genero, value); }
         //}
-        //public string Caracteristica1
-        //{
-        //    get { return _Caracteristica1; }
-        //    set { SetValue(ref _Caracteristica1, value); }
-        //}
-        //public string Caracteristica2
-        //{
-        //    get { return _Caracteristica2; }
-        //    set { SetValue(ref _Caracteristica2, value); }
-        //}
-        //public string Caracteristica3
-        //{
-        //    get { return _Caracteristica3; }
-        //    set { SetValue(ref _Caracteristica3, value); }
-        //}
-        //public string Caracteristica4
-        //{
-        //    get { return _Caracteristica4; }
-        //    set { SetValue(ref _Caracteristica4, value); }
-        //}
-        //public string Caracteristica5
-        //{
-        //    get { return _Caracteristica5; }
-        //    set { SetValue(ref _Caracteristica5, value); }
-        //}
-        //public string Caracteristica6
-        //{
-        //    get { return _Caracteristica6; }
-        //    set { SetValue(ref _Caracteristica6, value); }
-        //}
+        public bool Hombre
+        {
+            get { return _Hombre; }
+            set { SetValue(ref _Hombre, value); }
+        }
+        public bool Mujer
+        {
+            get { return _Mujer; }
+            set { SetValue(ref _Mujer, value); }
+        }
+        public bool Caracteristica1
+        {
+            get { return _Caracteristica1; }
+            set { SetValue(ref _Caracteristica1, value); }
+        }
+        public bool Caracteristica2
+        {
+            get { return _Caracteristica2; }
+            set { SetValue(ref _Caracteristica2, value); }
+        }
+        public bool Caracteristica3
+        {
+            get { return _Caracteristica3; }
+            set { SetValue(ref _Caracteristica3, value); }
+        }
+        public bool Caracteristica4
+        {
+            get { return _Caracteristica4; }
+            set { SetValue(ref _Caracteristica4, value); }
+        }
+        public bool Caracteristica5
+        {
+            get { return _Caracteristica5; }
+            set { SetValue(ref _Caracteristica5, value); }
+        }
+        public bool Caracteristica6
+        {
+            get { return _Caracteristica6; }
+            set { SetValue(ref _Caracteristica6, value); }
+        }
         private void RBH_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
             /*RadioButton rdb = sender as RadioButton;
@@ -101,38 +113,58 @@ namespace Criticometro_RERM.ViewModel
             //}
             //DisplayAlert("Mensaje", Mensaje, "salir");*/
         }
-        public void Criticar(string nombre, string sexo)
+        public void Criticar(string nombre)
         {
-            Mensaje = $"{nombre} es {sexo}";
+            Mensaje = $"{nombre} es ";
         }
         public async void BtnCriticar()
         {
-            Criticar(Nombre, _Genero);
+            Criticar(Nombre);
             if (_Caracteristica1 == true)
             {
-                Mensaje += "Alto";
+                if(Hombre == true)
+                {
+                    Mensaje += "Alto ";
+                }
+                else { Mensaje += "Alta "; }
             }
             if (_Caracteristica2 == true)
             {
-                Mensaje += "Feo";
+                if (Hombre == true)
+                {
+                    Mensaje += "Feo ";
+                }
+                else { Mensaje += "Fea "; }
             }
             if (_Caracteristica3 == true)
             {
-                Mensaje += "Listo";
+                if (Hombre == true)
+                {
+                    Mensaje += "Listo ";
+                }
+                else { Mensaje += "Lista "; }
             }
             if (_Caracteristica4 == true)
             {
-                Mensaje += "Extrabagante";
+                Mensaje += "Extrabagante ";
             }
             if (_Caracteristica5 == true)
             {
-                Mensaje += "Raro";
+                if (Hombre == true)
+                {
+                    Mensaje += "Raro ";
+                }
+                else { Mensaje += "Rara "; }
             }
             if (_Caracteristica6 == true)
             {
-                Mensaje += "Grande";
+                Mensaje += "Grande ";
             }
-            await DisplayAlert("Estado", Mensaje, "Sair");
+            //await DisplayAlert("Estado", Mensaje, "Sair");
+            string[]aux = Mensaje.Split(',');
+            int coma = Mensaje.LastIndexOf(",");
+            string buscado = ", ";
+            Mensaje = Mensaje.Remove(coma, buscado.Length).Insert(coma," y ");
         }
         public ICommand CriticarCommand => new Command(BtnCriticar);
     }
